@@ -53,4 +53,16 @@ public class StudentServiceImpl implements StudentService {
         //delete
         studentRepo.deleteById(id);
     }
+    @Override
+    public String getDepartmentByStudentId(Integer id) {
+        return studentRepo.findDepartmentByStudentId(id);
+    }
+    @Override
+    public List<Student> getStudentsByYearOfEnrollment(Integer yearOfEnrollment) {
+        return studentRepo.findByYearOfEnrollment(yearOfEnrollment);
+    }
+    @Override
+    public void deleteStudentsByYearOfEnrollment(Integer yearOfEnrollment) {
+        studentRepo.deleteByYearOfEnrollment(yearOfEnrollment);
+    }
 }
